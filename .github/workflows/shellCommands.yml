@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch architecture
-        run: cat "/etc/os-release"
+        run: cat /etc/os-release
