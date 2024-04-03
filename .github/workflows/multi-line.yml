@@ -1,0 +1,10 @@
+name: Multi Line execution
+'on': workflow_dispatch
+jobs:
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: multiline execution
+        run: |
+          cat /etc/os-release
+          uname -a
