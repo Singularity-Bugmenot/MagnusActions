@@ -1,6 +1,6 @@
 name: Trigger On Specific Branch
 on:
-    push:
+    workflow_dispatch:
         branches:
             - main
 jobs:
