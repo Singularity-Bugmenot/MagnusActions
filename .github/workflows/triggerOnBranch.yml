@@ -1,6 +1,7 @@
 name: Trigger On Specific Branch
 on:
     workflow_dispatch:
+        #branches: [main] => this is also permitted
         branches:
             - main
 jobs:
