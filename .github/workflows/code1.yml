@@ -9,6 +9,6 @@ jobs:
         steps:
             - name: Install python
               run: |
-                apt update
-                apt -y upgrade
-                apt install -y python3-pip
+                sudo apt update
+                sudo apt -y upgrade
+                sudo apt install -y python3-pip
