@@ -13,3 +13,4 @@ jobs:
             - name: Install python
               run: |
                 pip install pylint
+                pip install python3
