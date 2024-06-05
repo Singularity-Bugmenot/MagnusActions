@@ -10,9 +10,9 @@ jobs:
             - name: Upgrade system
               run: |
                 sudo apt update
-            #    sudo apt -y upgrade
-            #    sudo apt install software-properties-common
+                sudo apt -y upgrade
+                sudo apt install software-properties-common
                 echo python --version
-            #- name: Install pip
-            #  run: |
-            #    sudo apt install -y python3-pip                
+            - name: Install pip
+              run: |
+                sudo apt install -y python3-pip                
