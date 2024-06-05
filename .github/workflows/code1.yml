@@ -10,4 +10,10 @@ jobs:
     job_one:
         runs-on: ubuntu-latest
         steps:
-            - name: Pro is here 
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.2'
+              run: python my_script.py
