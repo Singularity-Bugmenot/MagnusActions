@@ -13,7 +13,7 @@ jobs:
         steps:
             - name: Check version
               run: |
-		sys_py_ver=$( python --version )
+				sys_py_ver=$( python --version )
                 sys_py_ver=$( $sys_py_ver | cut -d'' ' -f2 )
                 if[ "$python_ver" != "$sys_py_ver" ]; then install_python=true; fi
             - outputs:
