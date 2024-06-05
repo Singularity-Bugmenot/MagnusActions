@@ -3,15 +3,15 @@ description: "Install a spedified version of Python"
 author: "GuneetBhatia"
 
 on: 
-    workflow_dispatch:
-        branches: [main]
+  workflow_dispatch:
+    branches: [main]
 
 jobs:
   job_one:
     runs-on: ubuntu-latest
     steps:
-        - name: python install
-        - uses: actions/setup-python@v5
-          with:
-            python-version: '3.2'
-          run: python my_script.py
+      - name: python install
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.2'
+        run: python my_script.py
