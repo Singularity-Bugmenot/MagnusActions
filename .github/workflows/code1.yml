@@ -2,7 +2,9 @@ name: action-one
 description: "Install a spedified version of Python"
 author: "GuneetBhatia"
 
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+        branches: [main]
 
 jobs:
   job_one:
