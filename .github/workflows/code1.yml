@@ -10,4 +10,4 @@ jobs:
             - name: Upgrade system
               run: |
                 sudo apt update
-                echo python --version
+                python --version
