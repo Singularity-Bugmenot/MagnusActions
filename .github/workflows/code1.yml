@@ -4,7 +4,7 @@ on:
 
 env:
     python_ver: 3.2
-    install_python=false
+    install_python: false
 
 jobs:
     job_one:
@@ -24,7 +24,7 @@ jobs:
                 sudo apt install software-properties-common
                 python --version
   
-                
+
             - name: Install pip
               run: |
                 sudo apt install -y python3-pip
