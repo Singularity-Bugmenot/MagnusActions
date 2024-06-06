@@ -15,15 +15,5 @@ jobs:
               run: |
                 sys_py_ver=$( python --version )
                 sys_py_ver=$( $sys_py_ver | cut -d'' ' -f2 )
-                if[ "$python_ver" != "$sys_py_ver" ]; then install_python=true; fi
-
-            - name: Upgrade System for security
-              run: |
-                sudo apt update
-                sudo apt -y upgrade
-                sudo apt install software-properties-common
-                python --version
-
-            - name: Install pip
-              run: |
-                sudo apt install -y python3-pip                
+                if[ "$python_ver" != "$sys_py_ver" ]; then $install_python=true; fi
+                echo $install_python
