@@ -11,7 +11,7 @@ jobs:
         steps:
             - name: Check version
               run: |
-                sys_py_strV=$( echo python --version )
+                sys_py_strV=$( python --version )
                 echo $sys_py_strV
                 sys_py_ver=$( $sys_py_strV | cut -d' ' -f2 )
                 echo $sys_py_ver
