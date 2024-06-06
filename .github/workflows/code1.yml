@@ -4,7 +4,6 @@ on:
 
 env:
     python_ver: 3.2
-    install_python: false
 
 jobs:
     job_one:
@@ -12,19 +11,6 @@ jobs:
         steps:
             - name: Check version
               run: |
-                sys_py_strV=$( python --version /dev/null 2>&1)
+                sys_py_strV=$( python --version /dev/null 2>&1 )
                 if[[ $sys_py_strV == *"bash"* ]]; then sys_py_strV=$( python3 --version /dev/null 2>&1); else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
                 if[[ $sys_py_strV == *"bash"* ]]; then install_python=true; else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
-            
-            
-            - name: Upgrade System for security
-              run: |
-                sudo apt update
-                sudo apt -y upgrade
-                sudo apt install software-properties-common
-                python --version
-  
-
-            - name: Install pip
-              run: |
-                sudo apt install -y python3-pip
