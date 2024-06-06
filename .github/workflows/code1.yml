@@ -4,7 +4,6 @@ on:
 
 env:
     python_ver: 3.2
-    install_python: false
 
 jobs:
     job_one:
@@ -14,5 +13,5 @@ jobs:
               run: |
                 sys_py_ver=$( python --version )
                 sys_py_ver=$( $sys_py_ver | cut -d' ' -f2 )
-                if[ "$python_ver" != "$sys_py_ver" ]; then $install_python=true; fi
+                if[ "$python_ver" != "$sys_py_ver" ]; then install_python=true; else install_python=false; fi
                 echo $install_python
