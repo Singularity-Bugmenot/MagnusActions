@@ -13,5 +13,5 @@ jobs:
               run: |
                 sys_py_ver=$( python --version )
                 sys_py_ver=$( $sys_py_ver | cut -d' ' -f2 )
-                if[ "$python_ver" != "$sys_py_ver" ]; then install_python=true; else install_python=false; fi
+                if [ '$python_ver' == '$sys_py_ver' ]; then install_python=true; install_python=false; fi                
                 echo $install_python
