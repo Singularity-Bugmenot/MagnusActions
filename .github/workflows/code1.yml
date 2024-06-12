@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
     branches:
       - main
+    paths-ignore:
+      - '.github/worflows/*' # meaning any changes made to this location will not trigger git actions. Use 'paths' to tirgger.
 
 env:
     python_ver: 3.2
@@ -14,5 +16,5 @@ jobs:
             - name: Check version
               run: |
                 sys_py_strV=$( python --version /dev/null 2>&1 )
-                if [[ $sys_py_strV == *"bash"* ]]; then sys_py_strV=$( python3 --version /dev/null 2>&1 ); else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
-                if [[ $sys_py_strV == *"bash"* ]]; then install_python=true; else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
+                if [[ $sys_py_strV == *"not found"* ]]; then sys_py_strV=$( python3 --version /dev/null 2>&1 ); else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
+                if [[ $sys_py_strV == *"not found"* ]]; then install_python=true; else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
