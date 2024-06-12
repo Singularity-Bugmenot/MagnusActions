@@ -30,4 +30,5 @@ jobs:
       steps:
          - name: Update system as required
            run: |
+             echo "Python"
              echo {{ needs.job_one.outputs.py_install_needed }}
