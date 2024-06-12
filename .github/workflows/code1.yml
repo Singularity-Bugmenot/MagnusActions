@@ -12,9 +12,22 @@ env:
 jobs:
     job_one:
         runs-on: ubuntu-latest
+        outputs:
+          py_install_needed: ${{ steps.pythonV.outputs.py_install_req }}
         steps:
             - name: Check version
+              id: pythonV
               run: |
+                install_python="false";
                 sys_py_strV=$( python --version /dev/null 2>&1 )
                 if [[ $sys_py_strV == *"not found"* ]]; then sys_py_strV=$( python3 --version /dev/null 2>&1 ); else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
                 if [[ $sys_py_strV == *"not found"* ]]; then install_python=true; else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
+                py_install_req=echo $install_python
+                echo "py_install_req=$install_python" >> "$GITHUB_OUTPUT"
+
+    job_two:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Update system as required
+           run: |
+             echo {{ needs.job_one.outputs.py_install_needed }}
