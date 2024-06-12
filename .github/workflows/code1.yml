@@ -19,7 +19,7 @@ jobs:
               id: pythonV
               run: |
                 install_python="false"
-                sys_py_strV=$( 'python3 --version /dev/null 2>&1' )
+                sys_py_strV=$( echo python3 --version /dev/null 2>&1 )
                 if [[ $sys_py_strV == *"not found"* ]]; then sys_py_strV=$( python --version /dev/null 2>&1 ); else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
                 if [[ $sys_py_strV == *"not found"* ]]; then install_python=true; else sys_py_strV=$( $sys_py_strV | cut -d' ' -f2 ); fi
                 py_install_req=echo $install_python
