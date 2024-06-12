@@ -1,6 +1,8 @@
 name: action-one
 on:
   workflow_dispatch:
+    branches:
+      - main
 
 env:
     python_ver: 3.2
