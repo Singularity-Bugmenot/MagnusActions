@@ -26,6 +26,7 @@ jobs:
                 echo "py_install_req=$install_python" >> "$GITHUB_OUTPUT"
 
     job_two:
+      needs: job_one
       runs-on: ubuntu-latest
       steps:
          - name: Update system as required
