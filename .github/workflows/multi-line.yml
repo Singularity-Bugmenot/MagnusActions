@@ -1,8 +1,8 @@
 name: Multi Line execution
 #'on': workflow_dispatch
-on:
-  schedule:
-    - cron: '*/60 * * * *'
+#on:
+#  schedule:
+#    - cron: '*/60 * * * *'
 jobs:
   job3:
     runs-on: ubuntu-latest
